@@ -1,15 +1,17 @@
 import React from 'react'
+import { QueryClient, QueryClientProvider } from "react-query";
 import FetchData from './components/fetchData';
-import {QueryClient , QueryClientProvider} from "react-query";
+import PostData from './components/postData';
 
 function App() {
   const queryClient = new QueryClient(); // Create a QueryClient instance
 
-  return(
+  return (
     <QueryClientProvider client={queryClient}>
-    <React.Fragment>
-      <FetchData/>
-    </React.Fragment>
+      <React.Fragment>
+        <FetchData />
+        <PostData/>
+      </React.Fragment>
     </QueryClientProvider>
   );
 }

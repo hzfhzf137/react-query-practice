@@ -24,15 +24,13 @@ const FetchData = () => {
                 return (
                     <div key={e}>
                         <hr />
-
                         <ul>
-                            <li>Gender:{e.gender}</li>
-                            <li>Phone:{e.phone}</li>
                             <li>Name:{e.name.first + " " + e.name.last}</li>
                             <li>Age:{e.dob.age}</li>
+                            <li>Gender:{e.gender}</li>
+                            <li>Phone:{e.phone}</li>
                         </ul>
                         <hr />
-
                     </div>
                 );
             })}
