@@ -21,10 +21,10 @@ const FetchData = () => {
     return (
         <React.Fragment>
             <h1>Contacts</h1>
+            <hr />
             {halfData.map((e) => {
                 return (
                     <div key={e}>
-                        <hr />
                         <ul>
                             <li>User id:{e.userId}</li>
                             <li>id:{e.id}</li>
