@@ -3,13 +3,12 @@ import axios from "axios";
 import { useQuery } from "react-query";
 
 const dataPassed = async () => {
-    const response = await axios.get("https://randomuser.me/api");
+    const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
     return response.data;
 };
 
 const FetchData = () => {
     const { data, isLoading, error } = useQuery('items', dataPassed);
-
     if (isLoading) {
         return <div>Loading...</div>;
     }
@@ -17,18 +16,20 @@ const FetchData = () => {
     if (error) {
         return <div>Error: {error.message}</div>;
     }
+    const halfData = data ? data.slice(0, 4) : []; // Check if data is defined
+
     return (
         <React.Fragment>
             <h1>Contacts</h1>
-            {data.results.map((e) => {
+            {halfData.map((e) => {
                 return (
                     <div key={e}>
                         <hr />
                         <ul>
-                            <li>Name:{e.name.first + " " + e.name.last}</li>
-                            <li>Age:{e.dob.age}</li>
-                            <li>Gender:{e.gender}</li>
-                            <li>Phone:{e.phone}</li>
+                            <li>User id:{e.userId}</li>
+                            <li>id:{e.id}</li>
+                            <li>Tittle:{e.title}</li>
+                            <li>Body:{e.body}</li>
                         </ul>
                         <hr />
                     </div>

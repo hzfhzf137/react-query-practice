@@ -4,7 +4,7 @@ import { useMutation } from "react-query";
 
 const DeleteData=()=>
 {
-    const postId=1;
+    const postId=2;
     const deletecontact=async(postId)=>
     {
         const response=await axios.delete(`https://jsonplaceholder.typicode.com/posts/${postId}`)
