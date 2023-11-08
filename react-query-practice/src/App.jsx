@@ -12,9 +12,11 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <React.Fragment>
         <FetchData />
-        <PostData/>
-        <DeleteData/>
-        <UpdateData/>
+        <center>
+          <PostData />
+          <DeleteData />
+          <UpdateData />
+        </center>
       </React.Fragment>
     </QueryClientProvider>
   );
