@@ -2,6 +2,7 @@ import React from 'react'
 import { QueryClient, QueryClientProvider } from "react-query";
 import FetchData from './components/fetchData';
 import PostData from './components/postData';
+import DeleteData from './components/deleteData';
 
 function App() {
   const queryClient = new QueryClient(); // Create a QueryClient instance
@@ -11,6 +12,7 @@ function App() {
       <React.Fragment>
         <FetchData />
         <PostData/>
+        <DeleteData/>
       </React.Fragment>
     </QueryClientProvider>
   );
